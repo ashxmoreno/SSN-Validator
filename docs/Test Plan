@@ -1,0 +1,35 @@
+# Test Plan
+This document explain how the test were make.
+
+## End To End Tests
+
+E2E - 01:
+> Precondition: Start the program and pass 680-13-2041 as an argument.
+>
+> The program should print "The SSN is Valid".
+
+E2E - 02:
+> Precondition: Start the program and don't pass an argument.
+> 
+> The program should print "The SSN is Invalid".
+
+E2E - 03:
+> Precondition: Start the program and pass 68013-201 as an argument.
+>
+> The program should print "The SSN is Invalid".
+
+## Unit Tests
+
+| Id | Input | Output |
+| --- | --- | --- |
+| TC01 | 680-13-2041 | true |
+| TC02 | 680-13-204 | false |
+| TC03 | 680-13-20415 | false |
+| TC04 | 68013-2041 | false |
+| TC05 | -68013-2041 | false |
+
+
+I use the test framework Jest, to execute the unit tests, use the following command:
+```
+jest
+```
